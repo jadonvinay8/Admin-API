@@ -9,7 +9,7 @@ public class ShortTheater {
 	private String name;
 	
 	public ShortTheater() {
-		// TODO Auto-generated constructor stub
+		// Default Constructor
 	}
 	
 	public ShortTheater(String id, String name) {

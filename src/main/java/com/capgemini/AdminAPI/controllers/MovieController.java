@@ -20,10 +20,13 @@ import com.capgemini.AdminAPI.services.MovieService;
 @RequestMapping("/movies")
 public class MovieController {
 
+	private final MovieService movieService;
+
 	@Autowired
-	private MovieService movieService;
-	
-	
+	public MovieController(MovieService movieService) {
+		this.movieService = movieService;
+	}
+
 	@GetMapping
 	public ResponseEntity<List<Movie>> getAllMovies() {
 		return new ResponseEntity<List<Movie>>(movieService.findAll(), HttpStatus.OK);

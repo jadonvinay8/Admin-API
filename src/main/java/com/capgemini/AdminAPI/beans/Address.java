@@ -11,7 +11,7 @@ public class Address {
 	private	String pincode;
 	
 	public Address() {
-		// TODO Auto-generated constructor stub
+		// Default Constructor
 	}
 
 	public Address(String city, String state, String addressLine1, String pincode) {

@@ -9,7 +9,7 @@ public class ShortScreen {
 	private String name;
 	
 	public ShortScreen() {
-		// TODO Auto-generated constructor stub
+		// Default Constructor
 	}
 	
 	public ShortScreen(String id, String name) {

@@ -9,7 +9,7 @@ public class ShortCity {
 	private String name;
 	
 	public ShortCity() {
-		// TODO Auto-generated constructor stub
+		// Default Constructor
 	}
 	
 	public ShortCity(String name) {

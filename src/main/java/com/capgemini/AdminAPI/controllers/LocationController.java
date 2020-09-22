@@ -30,13 +30,16 @@ import com.capgemini.AdminAPI.services.TheaterService;
 @RequestMapping("/cities")
 public class LocationController {
 	
+	private final LocationService locationService;
+	
+	private final TheaterService theaterService;
+
 	@Autowired
-	private LocationService locationService;
-	
-	@Autowired
-	private TheaterService theaterService;
-	
-	
+	public LocationController(LocationService locationService, TheaterService theaterService) {
+		this.locationService = locationService;
+		this.theaterService = theaterService;
+	}
+
 	@GetMapping
 	public ResponseEntity<List<City>> getAllCities() {
 		return new ResponseEntity<List<City>>(locationService.getAllCities(), HttpStatus.OK);
@@ -73,7 +76,8 @@ public class LocationController {
 	}
 	
 	@DeleteMapping("/{id}/theaters/{theaterId}")
-	public ResponseEntity<Theater> removeTheater(@PathVariable("id") String cityId, @PathVariable("theaterId") String theaterId) {
+	public ResponseEntity<Theater> removeTheater(@PathVariable("id") String cityId,
+												 @PathVariable("theaterId") String theaterId) {
 		return new ResponseEntity<Theater>(theaterService.removeTheater(cityId, theaterId), HttpStatus.OK);
 	}
 	

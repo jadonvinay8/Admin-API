@@ -1,5 +1,6 @@
 package com.capgemini.AdminAPI.services;
 
+
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -20,11 +21,17 @@ import com.capgemini.AdminAPI.exceptions.CityNotFoundException;
 @Service
 public class LocationService {
 
+	private final LocationDAO locationDAO;
+
 	@Autowired
-	private LocationDAO locationDAO;
+	public LocationService(LocationDAO locationDAO) {
+		this.locationDAO = locationDAO;
+	}
 
 	public List<City> getAllCities() {
-		return StreamSupport.stream(locationDAO.findAll().spliterator(), false).collect(Collectors.toList());
+		return StreamSupport
+				.stream(locationDAO.findAll().spliterator(), false)
+				.collect(Collectors.toList());
 	}
 
 	public City addCity(City city) {

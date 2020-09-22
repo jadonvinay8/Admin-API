@@ -11,19 +11,17 @@ public class MoviePlan {
 	private	Instant endTime;
 	private	ShortMovie movie;
 	private	String movieDimension; // 2d 3d
-	private	Seat[][] seats;
 	
 	public MoviePlan() {
 		// Default Constructor
 	}
 
-	public MoviePlan(Instant startTime, Instant endTime, ShortMovie movie, String movieDimension, Seat[][] seats) {
+	public MoviePlan(Instant startTime, Instant endTime, ShortMovie movie, String movieDimension) {
 		super();
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.movie = movie;
 		this.movieDimension = movieDimension;
-		this.seats = seats;
 	}
 
 	public Integer getId() {
@@ -65,13 +63,5 @@ public class MoviePlan {
 	public void setMovieDimension(String movieDimension) {
 		this.movieDimension = movieDimension;
 	}
-
-	public Seat[][] getSeats() {
-		return seats;
-	}
-
-	public void setSeats(Seat[][] seats) {
-		this.seats = seats;
-	}	
 	
 }
