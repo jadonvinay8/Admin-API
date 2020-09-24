@@ -10,7 +10,6 @@ import com.capgemini.AdminAPI.beans.ShortTheater;
 
 @DynamoDBTable(tableName = "Cities")
 public class City {
-	
 
 	private String id;
 	private String cityName;
